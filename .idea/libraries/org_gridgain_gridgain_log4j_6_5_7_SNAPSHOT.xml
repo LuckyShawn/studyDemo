@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="org.gridgain:gridgain-log4j:6.5.7-SNAPSHOT" type="repository">
+    <properties maven-id="org.gridgain:gridgain-log4j:6.5.7-SNAPSHOT" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/gridgain/gridgain-log4j/6.5.7-SNAPSHOT/gridgain-log4j-6.5.7-SNAPSHOT.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/gridgain/gridgain-core/6.5.7-SNAPSHOT/gridgain-core-6.5.7-SNAPSHOT.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
