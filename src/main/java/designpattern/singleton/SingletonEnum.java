@@ -1,4 +1,4 @@
-package designpattern;
+package designpattern.singleton;
 
 /**
  * @Description 枚举类型的单例模式

@@ -1,4 +1,4 @@
-package designpattern;
+package designpattern.singleton;
 
 /**
  * @Description 单例模式:线程安全的饿汉模式
