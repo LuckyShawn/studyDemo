@@ -1,7 +1,5 @@
 package prototype;
 
-import sun.jdbc.odbc.JdbcOdbc;
-
 /**
  * @Description TODO
  * @Author shawn
