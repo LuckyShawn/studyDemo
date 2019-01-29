@@ -1,8 +1,4 @@
 package study;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
-
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -17,8 +13,9 @@ public class ThreadRandom {
     public static void main(String[] args) {
         Random random = new Random();
         System.out.println(random.nextInt());
-        System.out.println(ThreadLocalRandom.current());
         Random r = ThreadLocalRandom.current();
-        r.nextInt();
+
+        System.out.println(r.nextInt());
+
     }
 }

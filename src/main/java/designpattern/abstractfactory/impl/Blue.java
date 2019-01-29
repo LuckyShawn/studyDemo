@@ -13,3 +13,4 @@ public class Blue implements Color {
         System.out.println("填充蓝色");
     }
 }
+
