@@ -13,7 +13,7 @@ public class SingletonSafeDouble {
 
     }
 
-    public synchronized static SingletonSafeDouble singletonSafeDouble(){
+    public synchronized static SingletonSafeDouble getInstance(){
         if(singletonSafeDouble == null){
             synchronized (SingletonSafeDouble.class){
                 if(singletonSafeDouble == null) {

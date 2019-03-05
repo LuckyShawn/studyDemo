@@ -6,11 +6,11 @@ package designpattern.singleton;
  * @create 2019/1/10 0010
  */
 public class SingletonSafe {
-    public static SingletonSafe singletonSafe = new SingletonSafe();
+    private static SingletonSafe singletonSafe = new SingletonSafe();
     private SingletonSafe(){}
 
     //方法没有同步，调用效率高
-    private static SingletonSafe getInstance(){
+    public static SingletonSafe getInstance(){
 
         return singletonSafe;
     }

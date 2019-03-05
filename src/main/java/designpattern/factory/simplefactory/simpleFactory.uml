@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="201.0">designpattern.factory.simplefactory.SimpleFactoryTest</node>
+    <node x="72.0" y="0.0">designpattern.factory.simplefactory.Car</node>
+    <node x="144.0" y="103.0">designpattern.factory.simplefactory.Audi</node>
+    <node x="169.0" y="103.0">designpattern.factory.simplefactory.BYD</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="designpattern.factory.simplefactory.Audi" target="designpattern.factory.simplefactory.Car">
+      <point x="0.0" y="-26.5" />
+      <point x="206.0" y="78.0" />
+      <point x="165.0" y="78.0" />
+      <point x="31.0" y="26.5" />
+    </edge>
+    <edge source="designpattern.factory.simplefactory.BYD" target="designpattern.factory.simplefactory.Car">
+      <point x="0.0" y="-26.5" />
+      <point x="62.0" y="78.0" />
+      <point x="103.0" y="78.0" />
+      <point x="-31.0" y="26.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="254.0" y="48.0" />
+  <SelectedNodes>
+    <node>designpattern.factory.simplefactory.BYD</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

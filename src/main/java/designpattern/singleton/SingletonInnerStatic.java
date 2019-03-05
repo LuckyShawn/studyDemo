@@ -16,7 +16,7 @@ public class SingletonInnerStatic {
 
     }
 
-    public SingletonInnerStatic getInstance(){
+    public static SingletonInnerStatic getInstance(){
         return SingletonInnerStaticInstance.instance;
     }
 }
