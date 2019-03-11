@@ -7,7 +7,6 @@ package designpattern.chainofresponsibility;
  */
 public class ALevel extends Leader{
 
-
     public ALevel(String name) {
         super(name);
     }
