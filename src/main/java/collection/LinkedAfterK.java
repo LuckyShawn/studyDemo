@@ -19,6 +19,8 @@ public class LinkedAfterK {
         list4.next = list5;
         ListNode list6 = new ListNode(6);
         list5.next = list6;
+        ListNode list7 = new ListNode(7);
+        list5.next = list7;
 
 
         ListNode result = new LinkedAfterK().FindKthToTail(list1,3);
