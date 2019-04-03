@@ -15,6 +15,7 @@ public class TwoStackAsQueue {
         stack1.push(2);
         stack1.push(3);
         stack1.push(4);
+        stack1.push(5);
 
         while (!stack1.isEmpty()){
             System.out.println(stack1.pop());
