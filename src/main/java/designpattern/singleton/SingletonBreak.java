@@ -25,7 +25,7 @@ public class SingletonBreak implements Serializable {
         return singletonBreak;
     }
 
-    //反序列化时，如果定义了readResolve()，直接返回此方法指定的对象，而不需要单独再创建爱你新对象
+    //反序列化时，如果定义了readResolve()，直接返回此方法指定的对象，而不需要单独再创建新对象
     private Object readResolve() throws ObjectStreamException{
         return singletonBreak;
     }
