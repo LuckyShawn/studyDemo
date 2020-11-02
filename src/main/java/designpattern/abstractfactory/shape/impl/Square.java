@@ -1,6 +1,6 @@
-package designpattern.abstractfactory.impl;
+package designpattern.abstractfactory.shape.impl;
 
-import designpattern.abstractfactory.Shape;
+import designpattern.abstractfactory.shape.Shape;
 
 /**
  * @Description TODO

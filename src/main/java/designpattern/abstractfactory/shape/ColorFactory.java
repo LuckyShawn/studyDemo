@@ -1,8 +1,8 @@
-package designpattern.abstractfactory;
+package designpattern.abstractfactory.shape;
 
-import designpattern.abstractfactory.impl.Blue;
-import designpattern.abstractfactory.impl.Red;
-import designpattern.abstractfactory.impl.Yellow;
+import designpattern.abstractfactory.shape.impl.Blue;
+import designpattern.abstractfactory.shape.impl.Red;
+import designpattern.abstractfactory.shape.impl.Yellow;
 
 /**
  * @Description TODO

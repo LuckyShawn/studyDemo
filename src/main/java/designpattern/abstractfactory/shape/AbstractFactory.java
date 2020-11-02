@@ -1,4 +1,4 @@
-package designpattern.abstractfactory;
+package designpattern.abstractfactory.shape;
 
 /**
  * @Description 抽象工厂
