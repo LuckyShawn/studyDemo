@@ -8,11 +8,11 @@ import java.util.Map;
  * @title: FindShortestSubArray  697. 数组的度 (字段计数，数组)
  * @projectName studyDemo
  * @description: 给定一个非空且只包含非负数的整数数组 nums，数组的度的定义是指数组里任一元素出现频数的最大值。
- *
+ * <p>
  * 你的任务是在 nums 中找到与 nums 拥有相同大小的度的最短连续子数组，返回其长度。
- *
+ * <p>
  * 示例 1：
- *
+ * <p>
  * 输入：[1, 2, 2, 3, 1]
  * 输出：2
  * 解释：
@@ -21,27 +21,26 @@ import java.util.Map;
  * [1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2]
  * 最短连续子数组[2, 2]的长度为2，所以返回2.
  * 示例 2：
- *
+ * <p>
  * 输入：[1,2,2,3,1,4,2]
  * 输出：6
  *  
- *
+ * <p>
  * 提示：
- *
+ * <p>
  * nums.length 在1到 50,000 区间范围内。
  * nums[i] 是一个在 0 到 49,999 范围内的整数。
- *
  * @date 2021/2/20
  */
 public class FindShortestSubArray {
 
     public static void main(String[] args) {
-        System.out.println(findShortestSubArray(new int[]{1,2,2,3,1,4,2}));
+        System.out.println(findShortestSubArray(new int[]{1, 2, 2, 3, 1, 4, 2}));
     }
 
     public static int findShortestSubArray(int[] nums) {
         //先求出数组的度  即出现频率最高的数
-        Map<Integer,int[]> map = new HashMap<Integer,int[]>();
+        Map<Integer, int[]> map = new HashMap<Integer, int[]>();
         int n = nums.length;
         for (int i = 0; i < n; i++) {
             if (map.containsKey(nums[i])) {

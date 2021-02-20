@@ -30,17 +30,17 @@ public class FindMaxAverage {
         int sum = 0;
         int len = nums.length;
 
-        for(int i = 0 ; i < k ;i++){
+        for(int i = 0 ; i < k ;i++){    //前k个数的和 （创建窗口）
             sum += nums[i];
         }
         if(k == len){
-            return 1.0 * sum / k;
+            return 1.0 * sum / k;   //如果k刚好是数组长度，直接求平均值返回
         }
 
         int maxSum = sum;
         for(int i = k;i < len;i++){
-            sum += nums[i] - nums[i - k];
-            maxSum = Math.max(maxSum,sum);
+            sum += nums[i] - nums[i - k];   //滑动窗口，右边界往后一个，左边界往后一个（表达式中的差值）
+            maxSum = Math.max(maxSum,sum);  //每个窗口中的值做对比取最大值
         }
         return 1.0 * maxSum / k;
     }
