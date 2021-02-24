@@ -1,4 +1,4 @@
-package algorithm.leetcode.NotType;
+package algorithm.leetcode.notType;
 
 import java.util.Arrays;
 
