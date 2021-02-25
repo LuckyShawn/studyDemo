@@ -31,8 +31,7 @@ public class User {
         this.age = age;
     }
     public static void main(String[] args){
-        for (int i = 0; i < 10; i++) {
-            System.out.println(""+i);
-        }
+         User user = new User();
+         user.setAge(100);
     }
 }

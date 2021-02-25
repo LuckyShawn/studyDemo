@@ -13,7 +13,7 @@ public class SortByBits {
     public static void main(String[] args) {
         //System.out.println(Arrays.toString(sortByBits(new int[]{1,8,9,4,5,6,7,8,9})));
 
-
+        new HashMap<>();
         System.out.println(Arrays.toString(sortByBits2(new int[]{1,8,9,4,5,6,7,8,9})));
     }
 

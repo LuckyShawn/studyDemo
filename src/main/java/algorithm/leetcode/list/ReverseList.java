@@ -1,4 +1,4 @@
-package algorithm.leetcode.lianbiao;
+package algorithm.leetcode.list;
 
 /**
  * @author Shawn

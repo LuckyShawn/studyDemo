@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package algorithm.leetcode.notType;
 
 import java.util.Arrays;
 import java.util.HashSet;
