@@ -1,7 +1,7 @@
 package algorithm.leetcode.search;
 
 /**
- * 153. 寻找旋转排序数组中的最小值
+ * 153. 寻找旋转排序数组中的最小值 (二分查找)
  * 假设按照升序排序的数组在预先未知的某个点上进行了旋转。例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] 。
  *
  * 请找出其中最小的元素。
@@ -34,25 +34,33 @@ package algorithm.leetcode.search;
  */
 public class SearchRotateMin {
     public static void main(String[] args) {
-
-
+        System.out.println(findMin(new int[]{3,4,5,1,2}));
+        System.out.println(findMin(new int[]{4,5,6,7,0,1,2}));
+        System.out.println(findMin(new int[]{1}));
     }
 
+    /**
+     * 	0 ms  100.00%
+     * 	37.8 MB  71.22%
+     * @param nums
+     * @return
+     */
     public static int findMin(int[] nums) {
         int left = 0;
         int right = nums.length - 1;
-        int min = 0;
         while(left <= right){
-            int mid = left + ((right -left) >> 1);
-            //前半部分
-            if(nums[left] < nums[mid]){
-                //前半部分
-
+            //单调递增直接返回最左的
+            if(nums[left] <= nums[right]){
+                return nums[left];
             }
-
-
+            int mid = left + ((right -left) >> 1);
+            //left 和 mid之间递增，那么最小值肯定在mid右边
+            if(nums[left] <= nums[mid]){
+                left = mid + 1;
+            }else if(nums[left] > nums[mid]){//最小值在mid左边
+                right = mid;
+            }
         }
-
-
+        return -1;
     }
 }
