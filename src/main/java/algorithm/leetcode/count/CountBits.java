@@ -53,6 +53,12 @@ public class CountBits {
         return bits;
     }
 
+    /**
+     * 2 ms     60.00%
+     * 42.8 MB  14.64%
+     * @param num
+     * @return
+     */
     public static int[] countBits01(int num) {
         int[] bits = new int[num + 1];
         for (int i = 0; i <= num; i++) {

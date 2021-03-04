@@ -1,4 +1,4 @@
-package algorithm.leetcode.notType;
+package algorithm.leetcode.string;
 
 /**
  * @author Shawn  来源：力扣（LeetCode）
