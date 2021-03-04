@@ -1,8 +1,6 @@
-package algorithm.leetcode.easy.begin;
+package algorithm.leetcode.collect.easy;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**

@@ -1,4 +1,4 @@
-package algorithm.leetcode.easy.begin;
+package algorithm.leetcode.collect.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
