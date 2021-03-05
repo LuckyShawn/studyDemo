@@ -30,6 +30,12 @@ public class ArrayPermute {
         System.out.println( new ArrayPermute().permute(new int[]{1,2,3}));
     }
 
+    /**
+     * 执行用时：1 ms, 在所有 Java 提交中击败了96.69%的用户
+     * 内存消耗：38.8 MB, 在所有 Java 提交中击败了28.05%的用户
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
 
