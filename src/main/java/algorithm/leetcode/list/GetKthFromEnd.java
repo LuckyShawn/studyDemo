@@ -36,8 +36,3 @@ public class GetKthFromEnd {
 
 }
 
-class ListNode {
-    int val;
-    ListNode01 next;
-    ListNode(int x) { val = x; }
-}
