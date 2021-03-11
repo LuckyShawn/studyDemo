@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @author Shawn 来源：力扣（LeetCode）
- * @title: RemoveDuplicates 1047. 删除字符串中的所有相邻重复项 （easy）
+ * @title: RemoveDuplicates 1047. 删除字符串中的所有相邻重复项 （easy）(栈解决)
  * @projectName studyDemo
  * @description: 给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。
  *
@@ -36,6 +36,38 @@ public class RemoveDuplicates {
 
     }
 
+    /**
+     * 执行用时：23 ms, 在所有 Java 提交中击败了62.07%的用户
+     * 内存消耗：39.1 MB, 在所有 Java 提交中击败了60.14%的用户
+     * @param S
+     * @return
+     */
+    public String removeDuplicates01(String S) {
+        Stack<Character> stack = new Stack<>();
+        char[] s = S.toCharArray();
+        int len = S.length();
+        for (int i = 0; i < len; i++) {
+            if(stack.isEmpty() || stack.peek() != s[i]){
+                stack.push(s[i]);
+            }else{
+                stack.pop();
+            }
+        }
+        StringBuffer sb = new StringBuffer();
+        for (char c : stack){
+            sb.append(c);
+        }
+        return sb.toString();
+    }
+
+    /**
+     * 官解
+     * 执行用时：14 ms, 在所有 Java 提交中击败了75.40% 的用户
+     * 内存消耗：39.2 MB, 在所有 Java 提交中击败了 38.94%
+     * 的用户
+     * @param S
+     * @return
+     */
     public String removeDuplicates(String S) {
         StringBuffer stack = new StringBuffer();
         int top = -1;
