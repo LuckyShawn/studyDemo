@@ -70,7 +70,7 @@ public class MyQueue {
             stack02.push(stack01.pop());
         }
         stack02.push(x);    //将3 压入栈02，形成 1，2，3
-        while(!stack02.isEmpty()){  //再降栈02的数据全部弹出到栈02，形成3，2，1
+        while(!stack02.isEmpty()){  //再将栈02的数据全部弹出到栈01，形成3，2，1
             stack01.push(stack02.pop());
         }
 
