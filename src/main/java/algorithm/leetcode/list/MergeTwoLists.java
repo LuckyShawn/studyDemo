@@ -10,6 +10,8 @@ package algorithm.leetcode.list;
  * @date 2020/11/9
  */
 
+import java.util.List;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -46,7 +48,7 @@ public class MergeTwoLists {
             temp = temp.next;
         }
 
-        temp = mergeTwoLists(l1, l2);
+        temp = mergeTwoLists01(l1, l2);
 
         while (temp != null) {
             System.out.println(temp.val);
@@ -57,6 +59,12 @@ public class MergeTwoLists {
 
     }
 
+    /**
+     * 递归
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
@@ -69,6 +77,38 @@ public class MergeTwoLists {
             l2.next = mergeTwoLists(l1, l2.next);
             return l2;
         }
+    }
+
+    /**
+     * 暴力迭代解法
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：37.9 MB, 在所有 Java 提交中击败了54.79%的用户
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public static ListNode mergeTwoLists01(ListNode l1, ListNode l2) {
+        if(l1 == null){
+            return l2;
+        }
+        if(l2 == null){
+            return l1;
+        }
+        ListNode prehead = new ListNode(-1);//亚节点
+        ListNode prev = prehead;
+        while(l1 != null && l2 != null){
+            if(l1.val <= l2.val){
+                prev.next = l1;
+                l1 = l1.next;
+            }else{
+                prev.next = l2;
+                l2 = l2.next;
+            }
+            prev = prev.next;//移动亚节点，准备下一次比较
+        }
+        // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
+        prev.next = l1 == null ? l2 : l1;
+        return prehead.next;
     }
 
 
