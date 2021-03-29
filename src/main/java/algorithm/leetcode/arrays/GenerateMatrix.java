@@ -38,6 +38,12 @@ public class GenerateMatrix {
         }
     }
 
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：36.6 MB, 在所有 Java 提交中击败了50.52%的用户
+     * @param n
+     * @return
+     */
     public static int[][] generateMatrix(int n) {
             int length = n * n;
             int left = 0,right = n-1,top = 0,bottom = n-1;  //边界
