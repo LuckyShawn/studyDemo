@@ -46,6 +46,13 @@ public class Clumsy {
         System.out.println(clumsy(10));
     }
 
+    /**
+     * 模拟
+     * 执行用时：10 ms, 在所有 Java 提交中击败了14.84%的用户
+     * 内存消耗：38.2 MB, 在所有 Java 提交中击败了6.45%的用户
+     * @param N
+     * @return
+     */
     public static int clumsy(int N) {
         Deque<Integer> stack = new LinkedList<Integer>();
         stack.push(N);
