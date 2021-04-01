@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @author Shawn
- * @title: MyQueue  232. 用栈实现队列
+ * @title: MyQueue  232. 用栈实现队列 （栈模拟队列，push 2弹1，放值，1弹2）
  * @projectName studyDemo
  * @description: 请你仅使用两个栈实现先入先出队列。队列应当支持一般队列的支持的所有操作（push、pop、peek、empty）：
  *
