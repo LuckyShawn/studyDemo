@@ -30,6 +30,11 @@ import java.util.Set;
  */
 public class FindRepeatNumber {
 
+    /**
+     * Set不可重复的特性
+     * @param nums
+     * @return
+     */
     public int findRepeatNumber(int[] nums) {
         Set<Integer> set = new HashSet<Integer>();
         int repeat = -1;

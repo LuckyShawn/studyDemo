@@ -50,7 +50,7 @@ public class GenerateMatrix {
             int[][] resMatrix = new int[n][n];
             int num = 1;//从1开始
             while(num <= length){
-                //行不动，列右移，当列达到有边界停止移动，上边界下移一位
+                //行不动，列右移，当列达到右边界停止移动，上边界下移一位
                 for (int col = left; col <= right; col++) {
                     resMatrix[top][col] = num++;
                 }
@@ -71,9 +71,35 @@ public class GenerateMatrix {
                 }
                 left++;
             }
-
             return resMatrix;
         }
 
+        //lianxi
+        public static int[][] test(int n){
+            int[][] resMatrix = new int[n][n];
+            int left = 0,top = 0,right = n - 1,bottom = 0;  //边界
+            int length = n * n;
+            int index = 0;
+            while(index < length){
+                for (int col = left; col <= right; col++) {
+                    resMatrix[top][col] = index++;
+                }
+                top++;
+                for (int row = top; row <= bottom ; row++) {
+                    resMatrix[row][right] = index++;
+                }
+                right--;
+                for (int col = bottom; col >= left ; col--) {
+                    resMatrix[bottom][col] = index++;
+                }
+                bottom--;
+                for (int row = bottom; row >= top; row--) {
+                    resMatrix[row][left] = index++;
+                }
+                left++;
+            }
+            return resMatrix;
+
+        }
 
 }
