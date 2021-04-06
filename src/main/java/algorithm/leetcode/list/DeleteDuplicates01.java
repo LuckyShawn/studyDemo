@@ -58,4 +58,22 @@ public class DeleteDuplicates01 {
         }
         return dummy.next;
     }
+
+    public static ListNode test(ListNode head) {
+        if(head == null){
+            return head;
+        }
+        //定义亚节点
+        ListNode dummy = new ListNode(0,head);
+        //定义当前指针
+        ListNode cur = dummy;
+        while(cur.next!=null){
+            if(cur.val == cur.next.val){
+                cur.next = cur.next.next;
+            }else{
+                cur = cur.next;
+            }
+        }
+        return dummy.next;
+    }
 }
