@@ -24,6 +24,7 @@ public class BitOperation {
      * 异或运算 ^
      *  1.用于交换
      *  2.一个数与另一个数异或两次是其本身
+     *  3.逆序数组，比如[1,0,1]异或1 ->[0,1,0]
      */
     public static void yihuo(){
         //异或运算 1.用于交换  加减法也可以用来交换a=a+b; b=a-b; a=a-b;
