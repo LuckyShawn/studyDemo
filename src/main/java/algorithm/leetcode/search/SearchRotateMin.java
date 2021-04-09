@@ -34,12 +34,15 @@ package algorithm.leetcode.search;
  */
 public class SearchRotateMin {
     public static void main(String[] args) {
-        System.out.println(findMin(new int[]{3,4,5,1,2}));
-        System.out.println(findMin(new int[]{4,5,6,7,0,1,2}));
-        System.out.println(findMin(new int[]{1}));
+        System.out.println(findMin01(new int[]{3,4,5,1,2}));
+        System.out.println(findMin01(new int[]{4,5,6,7,0,1,2}));
+        System.out.println(findMin01(new int[]{6,5,4,3,2,1,0}));
+        System.out.println(findMin01(new int[]{6,5,4,3,2,1,0}));
+        System.out.println(findMin01(new int[]{1}));
     }
 
     /**
+     * 此方法是否有问题？
      * 	0 ms  100.00%
      * 	37.8 MB  71.22%
      * @param nums
@@ -53,14 +56,41 @@ public class SearchRotateMin {
             if(nums[left] <= nums[right]){
                 return nums[left];
             }
+            //单调递减直接返回最右的
+            if(nums[left] >= nums[right]){
+                return nums[right];
+            }
             int mid = left + ((right -left) >> 1);
             //left 和 mid之间递增，那么最小值肯定在mid右边
             if(nums[left] <= nums[mid]){
                 left = mid + 1;
-            }else if(nums[left] > nums[mid]){//最小值在mid左边
+            }else if(nums[left] > nums[mid]){
                 right = mid;
             }
         }
         return -1;
     }
+
+    /**
+     * 官解，推荐方法，易于理解
+     * @param nums
+     * @return
+     */
+    public static int findMin01(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int mid = left + ((right -left) >> 1);
+            //中值小于右边值，说明最小值在mid左侧，排除右边，在左侧进行查找
+            if (nums[mid] < nums[right]) {
+                right = mid;
+            } else {//中值大于等于右边，最小值在mid右侧，排除左边，在右侧查找
+                left = mid + 1;
+            }
+        }
+        return nums[left];
+    }
+
+
+
 }
