@@ -20,18 +20,21 @@ package algorithm.leetcode.list;
  */
 public class ReverseList {
     public static void main(String[] args) {
-        ListNode01 list5 = new ListNode01(5, null);
-        ListNode01 list4 = new ListNode01(4, list5);
-        ListNode01 list3 = new ListNode01(3, list4);
-        ListNode01 list2 = new ListNode01(2, list3);
-        ListNode01 list1 = new ListNode01(1, list2);
-        reverseList(list1);
-        list5 = new ListNode01(5, null);
-        list4 = new ListNode01(4, list5);
-        list3 = new ListNode01(3, list4);
-        list2 = new ListNode01(2, list3);
-        list1 = new ListNode01(1, list2);
-        reverseList01(list1);
+        ListNode l1 = new ListNode(1, new ListNode(5, new ListNode(9, new ListNode(9, new ListNode(10)))));
+        ListNode temp = l1;
+        while (temp != null) {
+            System.out.print("->" + temp.val);
+            temp = temp.next;
+        }
+        System.out.println();
+        temp = l1;
+
+        temp = reverseList01(temp);
+
+        while (temp != null) {
+            System.out.print("->" + temp.val);
+            temp = temp.next;
+        }
     }
 
     /**
@@ -40,11 +43,11 @@ public class ReverseList {
      * @param head
      * @return
      */
-    public static ListNode01 reverseList(ListNode01 head) {
-        ListNode01 cur = null;//当前从null开始
-        ListNode01 pre = head;//当前作为上一个节点
+    public static ListNode reverseList(ListNode head) {
+        ListNode cur = null;//当前从null开始
+        ListNode pre = head;//当前作为上一个节点
         while (pre != null) {
-            ListNode01 next = pre.next;    //上一个节点的上一个节点 2
+            ListNode next = pre.next;    //上一个节点的上一个节点 2
             pre.next = cur;   //上一个节点的 next 指针改为指向当前节点null
             //同时后移一位
             cur = pre;
@@ -59,30 +62,28 @@ public class ReverseList {
      * @param head
      * @return
      */
-    public static ListNode01 reverseList01(ListNode01 head) {
+    public static ListNode reverseList01(ListNode head) {
         if (head == null || head.next == null) {    //边界条件  当链表尾部指向null时结束，也就是遍历了一遍链表
             return head;
         }
-        ListNode01 p = reverseList01(head.next);
+        ListNode p = reverseList01(head.next);
         head.next.next = head;  //此时head.next.next 是null，赋值head，构成了循环链表
         head.next = null;
         return p;
     }
-}
 
-class ListNode01 {
-    int val;
-    ListNode01 next;
+    public ListNode test(ListNode head){
+        ListNode pre = head;
+        ListNode cur = null;
+        while(pre != null){
+            ListNode next = pre.next;
+            pre.next = cur;
+            cur = pre;
+            pre = next;
 
-    ListNode01() {
-    }
-
-    ListNode01(int val) {
-        this.val = val;
-    }
-
-    ListNode01(int val, ListNode01 next) {
-        this.val = val;
-        this.next = next;
+        }
+        return cur;
     }
 }
+
+

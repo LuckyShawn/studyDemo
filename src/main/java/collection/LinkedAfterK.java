@@ -1,5 +1,8 @@
 package collection;
 
+
+import algorithm.leetcode.list.ListNode;
+
 /**
  * @Description 链表中倒数第k个节点
  * @Author shawn
@@ -23,12 +26,13 @@ public class LinkedAfterK {
         list5.next = list7;
 
 
-        ListNode result = new LinkedAfterK().FindKthToTail(list1,3);
+        //ListNode result = new LinkedAfterK().FindKthToTail(list1,3);
+        ListNode result = new LinkedAfterK().FindKthToTail01(list1,3);
         System.out.println(result.val);
 
     }
 
-    public ListNode FindKthToTail(ListNode head,int k) {
+    public ListNode FindKthToTail(ListNode head, int k) {
         ListNode pre=null,p=null;
         //两个指针都指向头结点
         p=head;
@@ -52,13 +56,32 @@ public class LinkedAfterK {
         return pre;
 
     }
-}
 
-class ListNode {
-    int val;
-    ListNode next = null;
+    /**
+     * 统计总节点数index，再取 index - k个节点即可
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：36.2 MB, 在所有 Java 提交中击败了73.09%的用户
+     * @param head
+     * @param k
+     * @return
+     */
+    public  static ListNode FindKthToTail01(ListNode head, int k) {
+        ListNode temp = head;
+        int index = 0;
+        while(temp != null){
+            index++;
+            temp = temp.next;
+        }
+        int tailIndex = 0;
+        while(head != null){
+            if((index - k) == tailIndex++ ){
+                break;
+            }else{
+                head = head.next;
+            }
 
-    ListNode(int val) {
-        this.val = val;
+        }
+        return head;
     }
 }
+

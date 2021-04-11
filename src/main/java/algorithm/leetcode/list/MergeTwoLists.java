@@ -44,14 +44,15 @@ public class MergeTwoLists {
 
         temp = l2;
         while (temp != null) {
-            System.out.println(temp.val);
+            System.out.print(temp.val);
             temp = temp.next;
         }
-
-        temp = mergeTwoLists01(l1, l2);
+        System.out.println();
+        //temp = mergeTwoLists01(l1, l2);
+        temp = mergenListTest(l1, l2);
 
         while (temp != null) {
-            System.out.println(temp.val);
+            System.out.print(temp.val);
             temp = temp.next;
         }
 
@@ -111,6 +112,29 @@ public class MergeTwoLists {
         return prehead.next;
     }
 
+
+    public static ListNode mergenListTest(ListNode l1, ListNode l2){
+        if(l1 == null){
+            return l2;
+        }
+        if(l2 == null){
+            return l1;
+        }
+        ListNode dummy = new ListNode();
+        ListNode pre = dummy;
+        while(l1 != null && l2 != null){
+            if(l1.val >= l2.val){
+                pre.next = l2;
+                l2 = l2.next;
+            }else{
+                pre.next = l1;
+                l1 = l1.next;
+            }
+            pre = pre.next;
+        }
+        pre.next = l1 == null ? l2 : l1;
+        return dummy.next;
+    }
 
 }
 

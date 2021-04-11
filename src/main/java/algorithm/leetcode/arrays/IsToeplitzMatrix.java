@@ -49,6 +49,7 @@ public class IsToeplitzMatrix {
     public static boolean isToeplitzMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
+                //边界处理
                 if(i+1 < matrix.length && j+1 < matrix[i].length && matrix[i][j] != matrix[i+1][j+1]){
                     return false;
                 }
@@ -61,6 +62,18 @@ public class IsToeplitzMatrix {
         for (int i = 1; i < matrix.length; i++) {
             for (int j = 1; j < matrix[0].length; j++) {
                 if (matrix[i][j] != matrix[i - 1][j - 1]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    public static boolean test(int[][] matrix){
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if(i+1 < matrix.length && j+1 < matrix[i].length && matrix[i][j] != matrix[i+1][j+1]){
                     return false;
                 }
             }

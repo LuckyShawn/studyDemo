@@ -37,7 +37,7 @@ public class FlipAndInvertImage {
     }
 
     /**
-     * 左右指针指向的数组值相等，异或1，不等则保留，左右指针值相等指的是中间数，异或1
+     * 左右指针指向的数组值相等，异或1，不等则保留，左右指针值相等指的是中间数，异或1 (翻转和反转一步到位)
      * @param A
      * @return
      */
@@ -59,4 +59,5 @@ public class FlipAndInvertImage {
         }
         return A;
     }
+
 }

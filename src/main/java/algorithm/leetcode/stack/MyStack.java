@@ -5,7 +5,7 @@ import java.util.Queue;
 
 /**
  * @author Shawn
- * @title: MyStack 225. 用队列实现栈
+ * @title: MyStack 225. 用队列实现栈  （队列模拟栈，push 放值 1弹2 交换）
  * @projectName studyDemo
  * @description: 请你仅使用两个队列实现一个后入先出（LIFO）的栈，并支持普通队列的全部四种操作（push、top、pop 和 empty）。
  *
