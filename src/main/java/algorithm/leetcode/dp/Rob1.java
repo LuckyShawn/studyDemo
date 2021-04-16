@@ -1,4 +1,4 @@
-package algorithm.leetcode.notType;
+package algorithm.leetcode.dp;
 
 /**
  * @author Shawn  来源：力扣（LeetCode）
@@ -52,6 +52,7 @@ public class Rob1 {
         if (length == 1) {
             return nums[0];
         }
+        //只用到i的前两个变量
         int first = nums[0], second = Math.max(nums[0], nums[1]);
         for (int i = 2; i < length; i++) {
             int temp = second;
