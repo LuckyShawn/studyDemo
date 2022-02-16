@@ -60,12 +60,12 @@ public class GenerateMatrix {
                     resMatrix[row][right] = num++;
                 }
                 right--;
-                //行不懂，列左移，当行达到左边界停止移动，下边界上移一位
+                //行不动，列左移，当行达到左边界停止移动，下边界上移一位
                 for (int col = right; col >= left; col--) {
                     resMatrix[bottom][col] = num++;
                 }
                 bottom--;
-                //列不懂，行上移，当行达到上边界停止移动，左边界右移一位
+                //列不动，行上移，当行达到上边界停止移动，左边界右移一位
                 for (int row = bottom; row >= top; row--) {
                     resMatrix[row][left] = num++;
                 }

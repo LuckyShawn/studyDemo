@@ -44,14 +44,15 @@ public class ReverseList {
      * @return
      */
     public static ListNode reverseList(ListNode head) {
-        ListNode cur = null;//当前从null开始
-        ListNode pre = head;//当前作为上一个节点
-        while (pre != null) {
-            ListNode next = pre.next;    //上一个节点的上一个节点 2
-            pre.next = cur;   //上一个节点的 next 指针改为指向当前节点null
-            //同时后移一位
-            cur = pre;
-            pre = next;
+        //当前从null开始
+        ListNode cur = null;
+        //原头节点作为上一个节点
+        ListNode pre = head;
+        while(pre != null){
+            ListNode next = pre.next;//先将原链表的下一个节点保存下来
+            pre.next = cur;//反转
+            cur = pre;//指针后移
+            pre = next;//指针后移
         }
         return cur;
     }

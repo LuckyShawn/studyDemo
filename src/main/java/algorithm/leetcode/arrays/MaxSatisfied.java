@@ -67,7 +67,7 @@ public class MaxSatisfied {
     public static int maxSatisfied01(int[] customers, int[] grumpy, int X) {
         int total = 0;
         int n = customers.length;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {//总满意顾客数
             if (grumpy[i] == 0) {
                 total += customers[i];
             }
