@@ -6,7 +6,7 @@ import java.util.concurrent.Semaphore;
  * @author Shawn
  * @title: SemaphoreDemo 信号量
  * @projectName studyDemo
- * @description: TODO
+ * @description: 类似于锁：控制对某组资源的访问权限
  * @date 2022/2/17
  */
 public class SemaphoreDemo {

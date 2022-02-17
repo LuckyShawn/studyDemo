@@ -9,7 +9,11 @@ import java.util.concurrent.TimeoutException;
  * @author Shawn
  * @title: CyclicBarrierDemo 回环栅栏
  * @projectName studyDemo
- * @description: TODO
+ * @description:
+ * 加计数方式，计数达到指定值时释放所有等待线程
+ * 计数达到指定值时，计数置为0重新开始
+ * 调用await()方法计数加1，若加1后的值不等于构造方法的值，则线程阻塞
+ * 可重复利用
  * @date 2022/2/17
  */
 public class CyclicBarrierDemo {

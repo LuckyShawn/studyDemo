@@ -7,10 +7,14 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author Shawn
- * @title: CountDownLunchDemo
+ * @title: CountDownLunchDemo 计数器
  * @projectName studyDemo
- * @description: TODO
- * @date 2021/3/30
+ * @description: 减法计数，先设置一个固定数比如count=6，线程每执行一次减1，直到count=0释放所有线程
+ * 调用countDown()方法计数减1
+ * 计数为0时，释放所有等待的线程，无法重置
+ * 调用await()方法只进行阻塞，对计数没任何影响
+ * 不可重复利用
+ * @date 2022/2/17
  */
 public class CountDownLunchDemo {
 
