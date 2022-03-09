@@ -39,7 +39,8 @@ public class LengthOfLIS {
             return 0;
         }
         int ans = 0;
-        int[] dp = new int[nums.length];
+        int[] dp = new int[nums.length];// 以第 i 个数字结尾的最长上升子序列的长度
+
         //初始化，边界情况
         dp[0] = 1;
         //自底向上遍历
@@ -50,7 +51,7 @@ public class LengthOfLIS {
                 //找到前面比nums[i]小的数nums[j],即dp[i] = dp[j] + 1
                 if(nums[j] < nums[i]){
                     //有多个小于nums[i]的值，有多种组合，取最大值dp[i]
-                    dp[i] = Math.max(dp[i],dp[j] + 1);
+                    dp[i] = Math.max(dp[i],dp[j] + 1);//状态转移方程：j每次+1，nums[j]都与nums[i]比较，如果小于，则在之前最长子序列的基础上+1
                 }
             }
             //最大dp[i]就是答案
