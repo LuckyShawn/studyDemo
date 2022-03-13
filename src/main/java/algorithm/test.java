@@ -37,7 +37,7 @@ public class test {
         b = temp ^ b;
         System.out.println("a:"+a);
         System.out.println("b:"+b);
-
+        System.out.println(null + "  " + null);
 
     }
 }

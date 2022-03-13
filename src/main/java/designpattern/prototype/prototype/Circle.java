@@ -1,4 +1,4 @@
-package prototype;
+package designpattern.prototype.prototype;
 
 /**
  * @Description TODO

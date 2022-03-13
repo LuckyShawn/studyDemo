@@ -18,7 +18,7 @@ import java.util.List;
  * 输入: "aab"
  * 输出:
  * [
- *   ["aa","b"],
+ *   ["ThreadPool","b"],
  *   ["a","a","b"]
  * ]
  * 通过次数65,625提交次数93,177

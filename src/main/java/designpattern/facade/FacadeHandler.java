@@ -17,7 +17,7 @@ public class FacadeHandler {
         c = new C();
     }
 
-    public void openPushClode(){
+    public void openPushClose(){
         a.handler();
         b.handler();
         c.handler();

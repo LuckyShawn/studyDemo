@@ -3,7 +3,7 @@ package collection;
 import java.util.Stack;
 
 /**
- * @Description  用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+ * @Description  用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。(不规范)
  * @Author shawn
  * @create 2019/3/25 0025
  */

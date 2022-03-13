@@ -16,8 +16,7 @@ public class Client {
         MyIterator myIterator = concreteMyAggregate.createIterator();
 
         while (myIterator.hasNext()){
-            System.out.println(myIterator.getCurrentObj());
-            myIterator.next();
+            System.out.println(myIterator.next());
         }
 
     }
