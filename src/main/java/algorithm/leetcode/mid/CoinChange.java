@@ -1,5 +1,7 @@
 package algorithm.leetcode.mid;
 
+import java.util.Arrays;
+
 /**
  * @Description 给你一个整数数组 coins ，表示不同面额的硬币；以及一个整数 amount ，表示总金额。
  *
@@ -33,17 +35,23 @@ package algorithm.leetcode.mid;
  * @create 2022/3/13 0013
  */
 public class CoinChange {
-    public int coinChange(int[] coins, int amount) {
+
+    public static void main(String[] args) {
+        System.out.println(coinChange(new int[]{1,2,5},11));
+    }
+    public static int coinChange(int[] coins, int amount) {
         int max = amount + 1;
         int dp[] = new int[max];
+        Arrays.fill(dp, max);
         dp[0] = 0;
-        for (int i = 1; i < amount; i++) {
+        for (int i = 1; i <= amount; i++) {
             for (int j = 0; j < coins.length; j++) {
-                if(coins[j] < i){
+                if(coins[j] <= i){
                     dp[i] = Math.min(dp[i],dp[i - coins[j]] + 1);   //dp[i - coins[j]]表示面值减去硬币金额，仍然存在结果的情况，也就是上一个结果
+                    System.out.println(Arrays.toString(dp));
                 }
             }
         }
-        return dp[amount];
+        return dp[amount] > amount ? -1 : dp[amount];
     }
 }

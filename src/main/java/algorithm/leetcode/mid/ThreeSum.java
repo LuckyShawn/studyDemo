@@ -64,38 +64,48 @@ public class ThreeSum {
 
 
     public static List<List<Integer>> threeSum01(int[] nums) {// 总时间复杂度：O(n^2)
-        List<List<Integer>> result = new ArrayList<>();
-        if (nums == null || nums.length <= 2) { //特殊情况
-            return result;
+        List<List<Integer>> ans = new ArrayList<>();
+        if(nums == null || nums.length < 3){ //注意边界问题
+            return ans;
         }
-        Arrays.sort(nums);//排序
-        for (int i = 0; i < nums.length - 2; i++) {
-            if (nums[i] > 0) break; //如果第一个数都是大于0的，那么他们之和肯定不为0
-            if (i > 0 && nums[i] == nums[i - 1]) {  //去重
+        int length = nums.length;
+        Arrays.sort(nums);//O(nlogn)
+        for (int i = 0; i < length; i++) {
+            if(nums[i] > 0){    //如果排序后的第一位大于0，则后面不可能三数和为0,结束
+                break;
+            }
+            if(i > 0 && nums[i] == nums[i-1]){   //去重
                 continue;
             }
-            int target = nums[i];
             int left = i + 1;
-            int right = nums.length - 1;
-            while (left < right) {
-                if (nums[left] + nums[right] + target == 0) {
-                    result.add(new ArrayList<>(Arrays.asList(nums[i], nums[left], nums[right])));
-                    left++;
-                    right--;
-                    // 现在要增加 left，减小 right，但是不能重复，比如: [-2, -1, -1, -1, 3, 3, 3], i = 0, left = 1, right = 6, [-2, -1, 3] 的答案加入后，需要排除重复的 -1 和 3
-                    if (left < right && nums[left] == nums[left - 1]) {
-                        left++;
-                    }
-                    if (left < right && nums[right] == nums[right + 1]) {
+            int right = length - 1;
+            while (left < right){
+                int sum = nums[i] + nums[left] + nums[right];
+                List temp = new ArrayList();
+                if(sum == 0) {
+                    temp.add(nums[i]);
+                    temp.add(nums[left]);
+                    temp.add(nums[right]);
+                    ans.add(temp);
+
+                    //去重，做指针和下一个相等（题目规定不能重复）
+                    while (left < right && nums[left] == nums[left + 1]){
+                        left++ ;
+                    }//去重，右指针和前一个相等
+                    while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
-                } else if (nums[left] + nums[right] + target < 0) {
                     left++;
-                } else {
                     right--;
+
+                }else if(sum > 0){
+                    right--;
+                }else{
+                    left++;
                 }
             }
+
         }
-        return result;
+        return ans;
     }
 }
