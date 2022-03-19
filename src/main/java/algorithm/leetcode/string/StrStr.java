@@ -39,6 +39,7 @@ public class StrStr      {
                 return start;
             }
         }
+        haystack.indexOf('a');
         return -1;
     }
 }
