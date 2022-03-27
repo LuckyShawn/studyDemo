@@ -2,6 +2,8 @@ package algorithm.leetcode.leetCodeTop.easy;
 
 import algorithm.leetcode.list.ListNode;
 
+import java.util.List;
+
 /**
  * @author Shawn  * 来源：力扣（LeetCode）
  * @title: GetIntersectionNode 160. 相交链表
@@ -89,6 +91,43 @@ public class GetIntersectionNode {
         }
         return pA;
     }
+
+
+
+
+    /**
+     * 指针 pA 指向 A 链表，指针 pB 指向 B 链表，依次往后遍历
+     * 如果 pA 到了末尾，则 pA = headB 继续遍历
+     * 如果 pB 到了末尾，则 pB = headA 继续遍历
+     * 比较长的链表指针指向较短链表head时，长度差就消除了
+     * 如此，只需要将最短链表遍历两次即可找到位置
+     *
+     * 可以理解成两个人速度一致， 走过的路程一致。那么肯定会同一个时间点到达终点。如果到达终点的最后一段路两人都走的话，那么这段路上俩人肯定是肩并肩手牵手的。
+     *
+     * 走到尽头见不到你，于是走过你来时的路，等到相遇时才发现，你也走过我来时的路。
+     * @param headA
+     * @param headB
+     * @return
+     */
+    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+        ListNode pA = headA;
+        ListNode pB = headB;
+        while(pA != pB){
+            if(pA == null){ //pA走完了，就去走B的路
+                pA = headB;
+            }else{
+                pA = pA.next;
+            }
+
+            if(pB == null){ //pB走完了，就去走A的路
+                pB = headA;
+            }else{
+                pB = pB.next;
+            }
+        }
+        return pA;
+    }
+
 
 
 }
