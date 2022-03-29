@@ -57,11 +57,11 @@ public class MergeTwoLists {
         }
 
 
-
     }
 
     /**
      * 递归
+     *
      * @param l1
      * @param l2
      * @return
@@ -84,24 +84,25 @@ public class MergeTwoLists {
      * 暴力迭代解法
      * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
      * 内存消耗：37.9 MB, 在所有 Java 提交中击败了54.79%的用户
+     *
      * @param l1
      * @param l2
      * @return
      */
     public static ListNode mergeTwoLists01(ListNode l1, ListNode l2) {
-        if(l1 == null){
+        if (l1 == null) {
             return l2;
         }
-        if(l2 == null){
+        if (l2 == null) {
             return l1;
         }
         ListNode prehead = new ListNode(-1);//亚节点
         ListNode prev = prehead;
-        while(l1 != null && l2 != null){
-            if(l1.val <= l2.val){
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
                 prev.next = l1;
                 l1 = l1.next;
-            }else{
+            } else {
                 prev.next = l2;
                 l2 = l2.next;
             }
@@ -113,27 +114,28 @@ public class MergeTwoLists {
     }
 
 
-    public static ListNode mergenListTest(ListNode l1, ListNode l2){
-        if(l1 == null){
+    /**
+     * 迭代法
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public static ListNode mergenListTest(ListNode l1, ListNode l2) {
+        if (l1 == null) {
             return l2;
         }
-        if(l2 == null){
+        if (l2 == null) {
             return l1;
         }
-        ListNode dummy = new ListNode();
-        ListNode pre = dummy;
-        while(l1 != null && l2 != null){
-            if(l1.val >= l2.val){
-                pre.next = l2;
-                l2 = l2.next;
-            }else{
-                pre.next = l1;
-                l1 = l1.next;
-            }
-            pre = pre.next;
+
+        if (l1.val < l2.val) {  //
+            l1.next = mergeTwoLists(l1.next,l2);
+            return l1;
+        }else{
+            l2.next = mergeTwoLists(l1,l2.next);
+            return l2;
         }
-        pre.next = l1 == null ? l2 : l1;
-        return dummy.next;
     }
 
 }

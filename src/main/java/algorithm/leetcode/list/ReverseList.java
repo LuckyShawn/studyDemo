@@ -1,5 +1,7 @@
 package algorithm.leetcode.list;
 
+import java.util.List;
+
 /**
  * @author Shawn
  * @title: ReverseList  206. 反转链表
@@ -74,16 +76,18 @@ public class ReverseList {
     }
 
     public ListNode test(ListNode head){
-        ListNode pre = head;
-        ListNode cur = null;
-        while(pre != null){
-            ListNode next = pre.next;
-            pre.next = cur;
-            cur = pre;
-            pre = next;
-
+        //最前面的指针是null（虚拟指针）
+        ListNode pre = null;
+        //当前从头开始
+        ListNode cur = head;
+        while(cur != null){
+            //记录下当前的下一个，以便后移
+            ListNode next = cur.next;
+            cur.next = pre;//反转，当前的下一个指向前一个
+            pre = cur;//指针后移，前一个到当前
+            cur = next;//指针后移，当前到下一个
         }
-        return cur;
+        return pre;
     }
 }
 

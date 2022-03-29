@@ -10,8 +10,8 @@ package algorithm.leetcode.tree;
 public class TreeNode {
     int val;
     TreeNode left;
-    TreeNode right;
 
+    TreeNode right;
     TreeNode() {
     }
 

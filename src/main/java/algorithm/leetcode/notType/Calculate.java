@@ -72,7 +72,11 @@ public class Calculate {
         return ret;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println(calculate("1+2"));
+        while (true){
+            System.out.println("111");
+            Thread.sleep(1000);
+        }
     }
 }
