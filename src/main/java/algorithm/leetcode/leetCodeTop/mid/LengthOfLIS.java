@@ -34,6 +34,14 @@ public class LengthOfLIS {
         System.out.println( lengthOfLIS(new int[]{7,7,7,7,8,7,7}));
     }
 
+    /**
+     * TOP
+     * 1.边界条件
+     * 2.状态转移方程：dp[i] = Math.max(dp[i],dp[j] + 1)  dp[i]含义是：i坐标之前的最长递增子序列
+     * 对比过程中，只要出现nums[i] > nums[j] 的情况，取dp[i] 和dp[j] +1 中的较大值
+     * @param nums
+     * @return
+     */
     public static int lengthOfLIS(int[] nums) {
         if(nums.length == 0){
             return 0;
@@ -51,7 +59,7 @@ public class LengthOfLIS {
                 //找到前面比nums[i]小的数nums[j],即dp[i] = dp[j] + 1
                 if(nums[j] < nums[i]){
                     //有多个小于nums[i]的值，有多种组合，取最大值dp[i]
-                    dp[i] = Math.max(dp[i],dp[j] + 1);//状态转移方程：j每次+1，nums[j]都与nums[i]比较，如果小于，则在之前最长子序列的基础上+1
+                    dp[i] = Math.max(dp[i],dp[j] + 1);//状态转移方程：j每次+1，nums[j]都与nums[i]比较，如果小于，则在之前最长子序列的基础上+1，然后取最大的
                 }
             }
             //最大dp[i]就是答案
