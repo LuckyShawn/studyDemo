@@ -25,14 +25,14 @@ import java.util.List;
 public class MergeTwoLists {
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
-        ListNode l11 = new ListNode(5);
-        ListNode l111 = new ListNode(9);
+        ListNode l11 = new ListNode(2);
+        ListNode l111 = new ListNode(5);
         l1.next = l11;
         l11.next = l111;
 
-        ListNode l2 = new ListNode(2);
+        ListNode l2 = new ListNode(0);
         ListNode l22 = new ListNode(3);
-        ListNode l222 = new ListNode(10);
+        ListNode l222 = new ListNode(4);
         l2.next = l22;
         l22.next = l222;
 
@@ -48,8 +48,9 @@ public class MergeTwoLists {
             temp = temp.next;
         }
         System.out.println();
-        //temp = mergeTwoLists01(l1, l2);
-        temp = mergenListTest(l1, l2);
+        temp = mergeTwoLists01(l1, l2);
+        //temp = mergenListTest(l1, l2);
+        temp = mergeTwoLists(l1, l2);
 
         while (temp != null) {
             System.out.print(temp.val);
