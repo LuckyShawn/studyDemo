@@ -1,6 +1,9 @@
 package algorithm.leetcode.leetCodeTop.easy;
 
 import algorithm.leetcode.list.ListNode;
+
+import java.util.List;
+
 /**
  * @author Shawn
  * @title: ReverseList  206. 反转链表
@@ -82,7 +85,6 @@ public class ReverseList {
             pre.next = cur;
             cur = pre;
             pre = next;
-
         }
         return cur;
     }

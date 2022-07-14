@@ -36,10 +36,4 @@ public class Merge {
         // 表示将nums2数组从下标0位置开始，拷贝到nums1数组中，从下标0位置开始，长度为len2+1
         System.arraycopy(nums2, 0, nums1, 0, right2 + 1);
     }
-
-    public void swap(int[] arr,int i,int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
 }
