@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="studyDemo" />
+        <module name="com.study" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="shiro.demo" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>

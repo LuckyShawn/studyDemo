@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="echarts.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    option = {
+        xAxis: {
+            data: ['A', 'B', 'C', 'D', 'E']
+        },
+        yAxis: {},
+        series: [
+            {
+                data: [10, 22, 28, 23, 19],
+                type: 'line',
+                label: {
+                    show: true,
+                    position: 'bottom',
+                    textStyle: {
+                        fontSize: 20
+                    }
+                }
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+
+</html>
